@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: url(sources/images/bg-default.jpg) 
+    no-repeat center;
+  background-attachment: fixed;
+}
+
+main {
+  background: rgba(0, 0, 0, 50%);
+  min-height: 100vh;
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.aPreview {
+  width: 300px;
+  margin: auto;
+  padding: 25px 0px;
+}
+
+
+.channelName, .playerName {
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+.videoPrview > img {
+  width: 100%;
+}
+
+.playerDescription {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.playerDescription img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  opacity: 50%;
+  padding: 10px;
+}
+
+.playerDescription > .channelIntro {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+}
+
+.channelIntro * {
+  padding: 4px;
+}
