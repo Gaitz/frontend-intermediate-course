@@ -57,7 +57,7 @@ main {
   text-overflow: ellipsis;
 }
 /* aPreview hover transition settings */
-.aPreivew {
+.aPreview {
   transition-property: box-shadow, filter;
   transition-duration: 0.5s;
 }
