@@ -1,0 +1,117 @@
+backgroundImg = url(sources/images/bg-default.jpg);
+
+* {
+  margin: 0;
+}
+
+/* background settings */
+body {
+  background: backgroundImg;
+  background-attachment: fixed;
+  
+  main {
+    box-sizing border-box;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+    min-width: 100%;
+  }
+}
+
+/* flex aPrview box */
+main {
+  display: inline-flex;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+
+/* aPrview settings */
+.aPreview {
+  width: 300px;
+  margin-bottom: 25px;
+  
+  /* videoPreview settings */
+  .videoPreview {
+    position: relative;
+    height: 168.75px;
+    
+    &::before {
+      content: "";
+      position absolute;
+      top 0;
+      left 0;
+      background-image: url(sources/images/channel-default.jpg);
+      width: 100%;
+      height: 100%;
+    }
+    
+    img {
+      position: relative;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in;
+      width: 100%;
+    }
+  }
+  
+  
+  /* playerDescription settings */
+  .playerDescription {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: relative;
+    
+    .playerLogo::before {
+      content: "";
+      position absolute;
+      top 10px;
+      left 10px;
+      background-image: url(sources/images/channel-default.jpg);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      opacity: 0.5;
+    }  
+    
+    img {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      opacity: 0;
+      padding: 10px;
+      transition: opacity 0.2s ease-in;
+    }
+    
+    .channelIntro {
+      display: flex;
+      flex-direction: column;
+      padding: 6px;
+      
+      .channelName, .playerName {
+        padding: 4px;
+      
+        /* text setting */
+        color: white;
+        white-space: nowrap;
+        /* longer word hidden */
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+  
+/* aPreview hover transition settings */
+.aPreview {
+  transition-property: box-shadow, filter;
+  transition-duration: 0.5s;
+  &:hover {
+    box-shadow: 10px 6px 20px 4px rgba(0, 0, 0, 0.8);
+    filter: brightness(1.3);
+  }
+}
