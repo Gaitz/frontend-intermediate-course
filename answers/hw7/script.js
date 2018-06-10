@@ -3,16 +3,38 @@ var game = "League%20of%20Legends";
 var limit = 20;
 var urlToTwitch = "https://api.twitch.tv/kraken/streams/?";
 var offset = 0;
+var language = "";
 var isLoading = false;
 
 getDataFromTwitch(); // first time update HTML.
 window.addEventListener('scroll', runWhenScroll ); // infinite scroll
+
+function changeLang (langName) {
+  // change TITLE lang
+  document.getElementById("js-h1").innerHTML = window.I18N[langName].TITLE;
+  
+  // urlTOTwitch attributes
+  language = langName;
+  offset = 0;
+
+  // activeButton css
+  var elements = document.getElementsByTagName('li');
+  for (aLi of elements){
+    aLi.classList.remove("activeButton");
+  }
+  document.getElementById(`js-${langName}-button`).classList.add("activeButton");
+  
+  // clean old streams and get new steams in specific language
+  document.getElementById('js-main').innerHTML = "";
+  getDataFromTwitch();
+}
 
 function setAPIURL(){
   urlToTwitch += "game=" + game;
   urlToTwitch += "&limit=" + limit;
   urlToTwitch += "&client_id=" + clientId;
   urlToTwitch += "&offset=" + offset;  
+  urlToTwitch += "&language=" + language;
 }
 
 function getDataFromTwitch() {
@@ -49,7 +71,7 @@ function updateHTML() {
         '</section>';
     }  
     
-    // add html string into DOM
+    // append html string into DOM  
     const div = document.createElement('div');
     document.getElementById('js-main').appendChild(div);
     div.outerHTML = addHTML;
