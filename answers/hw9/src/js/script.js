@@ -27,7 +27,7 @@ function changeLang (langName) {
 
   // activeButton css
   let elements = document.getElementsByTagName('a');
-  for (aLink of elements){
+  for (let aLink of elements){
     aLink.classList.remove("activeButton");
   }
   document.getElementById(`js-${langName}`).classList.add("activeButton");

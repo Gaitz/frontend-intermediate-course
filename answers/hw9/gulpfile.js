@@ -10,7 +10,7 @@ let pump = require('pump');
 let minifyCSS = require('gulp-minify-css');
 let rename = require('gulp-rename');
 
-gulp.task('build', gulpSequence('webpack', 'sass', ['minifyCSS'], 'inline'));
+gulp.task('build', gulpSequence('webpack', 'sass', ['minifyCSS', 'uglify'], 'inline'));
 
 gulp.task('sass', function() {
   return gulp.src('src/css/*.scss')
