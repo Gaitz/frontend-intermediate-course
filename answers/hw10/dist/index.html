@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+body header,body main{background:rgba(0,0,0,.5)}*{margin:0;padding:0}body{background:url(../images/bg-default.jpg) fixed}body main{box-sizing:border-box;min-height:100vh;min-width:100%}.aPreview .playerDescription .playerLogo::before,.aPreview .videoPreview::before{content:"";background-image:url(../images/channel-default.jpg)}header{color:#fff}header h1{display:flex;justify-content:center;padding:20px 0;max-height:1em;align-items:baseline}header #js-langButtonContainer{display:flex;justify-content:center;align-items:baseline}header #js-langButtonContainer>a{margin:0 .2em;transition-property:color;transition-duration:.5s}.activeButton,header #js-langButtonContainer>a:hover{color:#34b8e8}main{display:inline-flex;align-content:center;justify-content:space-around;flex-wrap:wrap;padding:40px}.aPreview{width:300px;margin-bottom:25px}.aPreview .videoPreview{position:relative;height:168.75px}.aPreview .videoPreview::before{position:absolute;top:0;left:0;width:100%;height:100%}.aPreview .videoPreview img{position:relative;opacity:0;transition-property:opacity;transition-duration:.2s;transition-timing-function:ease-in;width:100%}.aPreview .playerDescription{background-color:rgba(0,0,0,.2);display:flex;position:relative}.aPreview .playerDescription .playerLogo::before{position:absolute;top:10px;left:10px;width:50px;height:50px;border-radius:50%;opacity:.5}.aPreview .playerDescription img{position:relative;width:50px;height:50px;border-radius:50%;opacity:0;padding:10px;transition:opacity .2s ease-in}.aPreview .playerDescription .channelIntro{display:flex;flex-direction:column;padding:6px}.aPreview .playerDescription .channelIntro .channelName,.aPreview .playerDescription .channelIntro .playerName{padding:4px;color:#fff;white-space:nowrap;width:200px;overflow:hidden;text-overflow:ellipsis}.aPreview{transition-property:box-shadow,filter;transition-duration:.5s}.aPreview:hover{box-shadow:10px 6px 20px 4px rgba(0,0,0,.8);filter:brightness(1.3)}
+</style>
+    <title>Fake Twitch</title>
+</head>
+
+<body>
+    <header id="js-header">
+        <h1 id="js-h1">用中文直播的頻道</h1>
+        <div id="js-langButtonContainer">
+            <a id="js-zh-tw">中文
+            <a id="js-en">English
+        </a></a></div>
+  </header>
+  <main id="js-main">
+  </main>
+  <script defer>
+!function(n){var s={};function i(e){if(s[e])return s[e].exports;var t=s[e]={i:e,l:!1,exports:{}};return n[e].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=n,i.c=s,i.d=function(e,t,n){i.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i(i.s=0)}([function(e,t,n){"use strict";var r={en:n(1),"zh-tw":n(2)},s="gty48ewtge90oxfobw7z2zfu45yf94",i="League%20of%20Legends",o=20,a="https://api.twitch.tv/kraken/streams/?",c=0,l="",d=!1;function u(e){document.getElementById("js-h1").innerHTML=r[e].TITLE,console.log(r[e].TITLE),l=e,c=0;var t=document.getElementsByTagName("a"),n=!0,s=!1,i=void 0;try{for(var o,a=t[Symbol.iterator]();!(n=(o=a.next()).done);n=!0){o.value.classList.remove("activeButton")}}catch(e){s=!0,i=e}finally{try{!n&&a.return&&a.return()}finally{if(s)throw i}}document.getElementById("js-"+e).classList.add("activeButton"),document.getElementById("js-main").innerHTML="",m()}function m(){var e=new window.XMLHttpRequest;e.onreadystatechange=v,d=!0,a+="game="+i,a+="&limit="+o,a+="&client_id="+s,a+="&offset="+c,a+="&language="+l,e.open("GET",a,!0),e.send()}function v(){if(4===this.readyState&&200===this.status){for(var e=JSON.parse(this.responseText),t="",n=0;n<e.streams.length;n++)t+='<section class="aPreview"><div class="videoPreview"><img onload="this.style.opacity = 1" src="'+e.streams[n].preview.medium+'" alt="" ></div><div class="playerDescription"><div class="playerLogo"><img onload="this.style.opacity = 1" src="'+e.streams[n].channel.logo+'" alt=""></div><div class="channelIntro"><div class="channelName">'+e.streams[n].channel.status+'</div><div class="playerName">'+e.streams[n].channel.display_name+"</div></div></div></section>";var s=document.createElement("div");document.getElementById("js-main").appendChild(s),s.outerHTML=t,c+=o,d=!1}}m(),window.addEventListener("scroll",function(){var e=document.documentElement.scrollTop,t=window.innerHeight,n=document.body.offsetHeight;d||n-t-200<e&&m()}),document.getElementById("js-zh-tw").addEventListener("click",function(){u("zh-tw")}),document.getElementById("js-en").addEventListener("click",function(){u("en")})},function(e,t,n){"use strict";e.exports={TITLE:"The streams in English"}},function(e,t,n){"use strict";e.exports={TITLE:"用中文直播的頻道"}}]);
+</script>
+</body>
+</html>

@@ -3,7 +3,6 @@
 gulp {
   [v] webpack (JSs >> a JS) with module
   [v] sass (scss >> css) compile
-
   [v] minify
   [v] inline
 }
