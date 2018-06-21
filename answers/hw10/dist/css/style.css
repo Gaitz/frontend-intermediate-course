@@ -4,7 +4,7 @@
 
 /* background settings */
 body {
-  background: url(../images/bg-default.jpg);
+  background: url(images/bg-default.jpg);
   background-attachment: fixed; }
   body main {
     box-sizing: border-box;
@@ -61,7 +61,7 @@ main {
       position: absolute;
       top: 0;
       left: 0;
-      background-image: url(../images/channel-default.jpg);
+      background-image: url(images/channel-default.jpg);
       width: 100%;
       height: 100%; }
     .aPreview .videoPreview img {
@@ -80,7 +80,7 @@ main {
       position: absolute;
       top: 10px;
       left: 10px;
-      background-image: url(../images/channel-default.jpg);
+      background-image: url(images/channel-default.jpg);
       width: 50px;
       height: 50px;
       border-radius: 50%;
