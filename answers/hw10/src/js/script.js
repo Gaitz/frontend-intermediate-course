@@ -1,3 +1,5 @@
+'use strict';
+
 let I18N = {
   'en': require('./lang-en.js'),
   'zh-tw': require('./lang-zh-tw.js')
@@ -96,6 +98,7 @@ function runWhenScroll () {
   let bodyHeight = document.body.offsetHeight; // 整個 body 高度
 
   if (!isLoading) {
+    window.alert(`scrollHeight: ${scrollHeight} \nwindowHeight: ${windowHeight} \nbodyHeight: ${bodyHeight}`);
     if (scrollHeight > (bodyHeight - windowHeight - windowHeight)) { // 拉到還有最後一個視窗大小時
       getDataFromTwitch();
     }
