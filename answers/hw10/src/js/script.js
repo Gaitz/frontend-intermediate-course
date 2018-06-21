@@ -93,12 +93,11 @@ function updateHTML () {
 }
 
 function runWhenScroll () {
-  let scrollHeight = document.documentElement.scrollTop; // 滾動高度
-  let windowHeight = window.innerHeight; // 目前視窗高度
+  let scrollHeight = document.documentElement.scrollTop || window.pageXOffset; // 滾動高度
+  let windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; // 目前視窗高度
   let bodyHeight = document.body.offsetHeight; // 整個 body 高度
 
   if (!isLoading) {
-    window.alert(`scrollHeight: ${scrollHeight} \nwindowHeight: ${windowHeight} \nbodyHeight: ${bodyHeight}`);
     if (scrollHeight > (bodyHeight - windowHeight - windowHeight)) { // 拉到還有最後一個視窗大小時
       getDataFromTwitch();
     }
