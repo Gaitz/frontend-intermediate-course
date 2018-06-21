@@ -91,15 +91,12 @@ function updateHTML () {
 }
 
 function runWhenScroll () {
-  let scrollHeight = document.documentElement.scrollTop;
-  let windowHeight = window.innerHeight;
-  let bodyHeight = document.body.offsetHeight;
-  // console.log('document.documentElement.scrollTop ' + document.documentElement.scrollTop); // 滾動高度
-  // console.log('window.innerHeight ' + window.innerHeight); // 目前視窗高度
-  // console.log('document.body.offsetHeight ' + document.body.offsetHeight); // 整個 body 高度
+  let scrollHeight = document.documentElement.scrollTop; // 滾動高度
+  let windowHeight = window.innerHeight; // 目前視窗高度
+  let bodyHeight = document.body.offsetHeight; // 整個 body 高度
 
   if (!isLoading) {
-    if (scrollHeight > bodyHeight - windowHeight - 200) { // almost scroll down
+    if (scrollHeight > (bodyHeight - windowHeight - windowHeight)) { // 拉到還有最後一個視窗大小時
       getDataFromTwitch();
     }
   }

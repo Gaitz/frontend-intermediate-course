@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0; }
 
+img {
+  max-width: 100%; }
+
 /* background settings */
 body {
   background: url(images/bg-default.jpg);

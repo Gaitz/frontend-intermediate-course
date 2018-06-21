@@ -175,15 +175,12 @@ function updateHTML() {
 }
 
 function runWhenScroll() {
-  var scrollHeight = document.documentElement.scrollTop;
-  var windowHeight = window.innerHeight;
-  var bodyHeight = document.body.offsetHeight;
-  // console.log('document.documentElement.scrollTop ' + document.documentElement.scrollTop); // 滾動高度
-  // console.log('window.innerHeight ' + window.innerHeight); // 目前視窗高度
-  // console.log('document.body.offsetHeight ' + document.body.offsetHeight); // 整個 body 高度
+  var scrollHeight = document.documentElement.scrollTop; // 滾動高度
+  var windowHeight = window.innerHeight; // 目前視窗高度
+  var bodyHeight = document.body.offsetHeight; // 整個 body 高度
 
   if (!isLoading) {
-    if (scrollHeight > bodyHeight - windowHeight - 200) {
+    if (scrollHeight > bodyHeight - windowHeight - windowHeight) {
       // almost scroll down
       getDataFromTwitch();
     }

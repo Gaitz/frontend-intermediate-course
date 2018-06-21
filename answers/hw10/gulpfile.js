@@ -10,6 +10,8 @@ let pump = require('pump');
 let minifyCSS = require('gulp-minify-css');
 let rename = require('gulp-rename');
 
+let inlineHTMLDest = '../../';
+
 gulp.task('build', gulpSequence('webpack', 'sass', ['minifyCSS', 'uglify'], 'inline'));
 
 gulp.task('sass', function () {
@@ -54,5 +56,5 @@ gulp.task('inline', function () {
       {
         base: 'dist/'
       }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest(inlineHTMLDest));
 });
